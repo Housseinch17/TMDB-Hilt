@@ -12,8 +12,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.anushka.tmdbclient.BuildConfig
 import com.anushka.tmdbclient.R
+import com.anushka.tmdbclient.data.repository.movie.ApiData
+import com.anushka.tmdbclient.data.repository.movie.datasourceImpl.MovieRemoteDataSourceImpl
 import com.anushka.tmdbclient.databinding.ActivityMovieBinding
+import com.anushka.tmdbclient.presentation.di.core.RemoteDataModule
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

@@ -20,35 +20,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class RemoteDataModule() {
 
-/*    @Qualifier
-    @Retention(AnnotationRetention.BINARY)
-    annotation class ApiKeyMovie
-
-    private var apiKeyMovie: String = "d"
-
-    fun setApiKeys(apiKeyMovie: String) {
-        this.apiKeyMovie = apiKeyMovie
-    }
-
-    @Singleton
-    @Provides
-    fun provideRemoteDataModule(): RemoteDataModule {
-        return this
-    }
-
-    @ApiKeyMovie
-    @Provides
-    fun provideApiKeyMovie(): String = apiKeyMovie
-
-    @Singleton
-    @Provides
-    fun provideMovieRemoteDataSource(tmdbService: TMDBService,@ApiKeyMovie apiKeyMovie: String
-    ): MovieRemoteDatasource {
-        Log.d("apiMovie",apiKeyMovie)
-        return MovieRemoteDataSourceImpl(
-            tmdbService, apiKeyMovie
-        )
-    }*/
     @Singleton
     @Provides
     fun provideMovieRemoteDataSource(tmdbService: TMDBService): MovieRemoteDatasource {
