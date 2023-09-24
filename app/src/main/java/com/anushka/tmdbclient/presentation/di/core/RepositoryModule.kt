@@ -19,6 +19,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -30,13 +31,13 @@ class RepositoryModule {
     fun provideMovieRepository(
         movieRemoteDatasource: MovieRemoteDatasource,
         movieLocalDataSource: MovieLocalDataSource,
-        movieCacheDataSource: MovieCacheDataSource
+        movieCacheDataSource: MovieCacheDataSource,
     ): MovieRepository {
 
         return MovieRepositoryImpl(
             movieRemoteDatasource,
             movieLocalDataSource,
-            movieCacheDataSource
+            movieCacheDataSource,
         )
 
 

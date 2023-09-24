@@ -11,7 +11,7 @@ import java.lang.Exception
 class MovieRepositoryImpl(
     private val movieRemoteDatasource: MovieRemoteDatasource,
     private val movieLocalDataSource: MovieLocalDataSource,
-    private val movieCacheDataSource: MovieCacheDataSource
+    private val movieCacheDataSource: MovieCacheDataSource,
 ) : MovieRepository {
     override suspend fun getMovies(): List<Movie>? {
        return getMoviesFromCache()

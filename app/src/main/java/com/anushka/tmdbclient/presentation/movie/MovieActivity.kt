@@ -14,12 +14,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.anushka.tmdbclient.BuildConfig
 import com.anushka.tmdbclient.R
-import com.anushka.tmdbclient.data.repository.movie.ApiData
-import com.anushka.tmdbclient.data.repository.movie.datasourceImpl.MovieRemoteDataSourceImpl
+import com.anushka.tmdbclient.data.repository.movie.MovieConstant
 import com.anushka.tmdbclient.databinding.ActivityMovieBinding
-import com.anushka.tmdbclient.presentation.di.core.RemoteDataModule
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import javax.inject.Named
 
 @AndroidEntryPoint
 class MovieActivity : AppCompatActivity() {
@@ -31,6 +30,7 @@ class MovieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_movie)
+        MovieConstant.movieApiKey = BuildConfig.API_KEY
         movieViewModel = ViewModelProvider(this, factory)
             .get(MovieViewModel::class.java)
         val responseLiveData = movieViewModel.getMovies()
